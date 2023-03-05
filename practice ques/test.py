@@ -1,21 +1,12 @@
-import pandas as pd
 
-df = pd.DataFrame({'Chemistry': [67,90,66,32],
 
-        'Physics': [45,92,72,40], 
+def check_answer(guess, a_followers, b_followers):
+  """Checks followers against user's guess 
+  and returns True if they got it right.
+  Or False if they got it wrong.""" 
+  if a_followers > b_followers:
+    return guess == "a"
+  else:
+    return guess == "b"
 
-        'Mathematics': [50,87,81,12], 
-
-        'English': [19,90,72,68]})
-# df += [10, 20, 10, 10]
-# print(df)
-
-print(df.sort_values(by="Physics"))
-# import pandas as pd
-
-# df = pd.DataFrame([[54.2,'a'],[658,'d']],
-#                   index = list('pq'))
-
-# print(df)
-# df.columns = df.index
-# print(df.columns.values)
+print(check_answer("a", 12, 13))
